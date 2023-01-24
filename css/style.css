@@ -1,0 +1,31 @@
+body {
+    height: 100vh;
+    width: 100vw;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: gray;
+}
+
+.zone_saisie {
+    position: absolute;
+    top: 90%;
+    background-color: black;
+    width: 100%;
+    height: 10%;
+}
+
+#form {
+    margin-left: 2%;
+    margin-top: 1%;
+}
+
+#form #m {
+    height: 50px;
+    width: 80%;
+}
+
+#form #submit {
+    height: 50px;
+    width: 18%;
+}
