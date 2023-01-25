@@ -1,4 +1,4 @@
-import '../node_modules/socket.io/client-dist/socket.io.js'
+import '../node_modules/socket.io/client-dist/socket.io.js' // yes
 
 const socket = io()
 
