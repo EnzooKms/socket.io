@@ -1,28 +1,29 @@
-import App from "express";
-const app = App()
-import * as http from 'http';
-import path from "path";
-const Http = http.createServer(app)
-import Io from "./node_modules/socket.io/client-dist/socket.io.js";
-const io = Io()
+const express = require('express')
+const app = express()
+const http = require('http').Server(app)
+const io = require('socket.io')(http)
+const port = 3000
 
 app.get('/', (req, res) => {
-    res.sendFile(path.dirname(`${process.cwd()}/index.html`))
+    res.sendFile(`${__dirname}/index.html`)
 })
 
-app.use(App.static(process.cwd()))
-
+app.use(express.static(process.cwd()))
 
 io.on('connection', (socket) => {
     console.log('a user is connected');
-    socket.on('disconnected', () => {
+
+    socket.on('disconnect', () => {
         console.log('a user is disconnected');
     })
-    socket.on('chat message', (msg) => {
-        console.log(`new message ${msg}`);
+
+    socket.on('chat message', (msg, user) => {
+        console.log(`message reçu ${msg} de ${user}`);
+        io.emit('chat message', msg, user)
     })
+
 })
 
-Http.listen(3000, () => {
-    console.log('Server running on 3000');
+http.listen(port, () => {
+    console.log(`Server running on ${port}`);
 })
