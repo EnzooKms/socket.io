@@ -61,9 +61,41 @@ body {
     overflow-x: hidden;
 }
 
-.container-message {
+#messages::-webkit-scrollbar {
+    background-color: transparent;
+}
+
+.container-message-other {
     color: white;
     width: 300px;
+    position: relative;
+    left: 70%;
+}
+
+
+.container-message-other .username-other {
+    color: grey;
+    position: relative;
+}
+
+.container-message-other .message-div-other {
+    background-color: orangered;
+    padding: 5px;
+    text-align: center;
+    border-radius: 30px;
+    position: relative;
+}
+
+.container-message-you {
+    color: white;
+    width: 300px;
+}
+
+.container-message-you .message-div-you {
+    background-color: aqua;
+    padding: 10px;
+    text-align: center;
+    border-radius: 30px;
 }
 
 .container-message .username-you {
@@ -72,24 +104,24 @@ body {
     left: 8%;
 }
 
-.container-message .username-other {
-    color: grey;
-    position: relative;
-    left: 8%;
+#container {
+    display: none;
 }
 
-.container-message .message-div-you {
-    background-color: aqua;
-    padding: 10px;
-    text-align: center;
-    border-radius: 30px;
+#container-register {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.container-message .message-div-other {
-    background-color: gray;
-    padding: 5px;
-    text-align: center;
-    border-radius: 30px;
-    position: relative;
-    left: 60%;
+#champ-register {
+    height: 30px;
+    width: 300px;
+}
+
+#submit-register {
+    height: 30px;
+    width: 80px;
 }
